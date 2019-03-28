@@ -1,5 +1,36 @@
 <html>
+<head>
+    <title>My Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <iframe id="bg-music" width="0" height="0" src="https://www.youtube.com/embed/UyJUau8azMs?autoplay=1" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+<script type="text/javascript">
+	if (/chrome/i.test(navigator.userAgent)){
+		var ID = 'bg-music';
+		
+		document.getElementById(ID).onload= function() {
+			//taken from youtube embed js api example
+			var tag = document.createElement('script');
+			tag.src = "https://www.youtube.com/iframe_api";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		};
+		var Player;
+		function onYouTubeIframeAPIReady() {
+			Player = new YT.Player(ID, {
+				events: {
+					'onReady': AutoPlayWorkaround
+				}
+			});
+		}
+		function AutoPlayWorkaround(Event) {
+			Event.target.playVideo();
+		}
+	}
+</script>
+
+
+</head>
+
 <body>
-	<p>Hello World!</p>
 </body>
 </html>

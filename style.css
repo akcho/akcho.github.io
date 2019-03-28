@@ -1,4 +1,13 @@
 body {
- background-image: url("https://media.giphy.com/media/5WXqTFTgO9a7e/giphy.gif");
- background-color: #cccccc;
+	background-image: url("http://i.imgur.com/uOYFkKS.gif");
+	background-color: rgba(0,0,0,90);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#bg-music {
+	width="0";
+	height="0";
+	frameborder="0";
 }
